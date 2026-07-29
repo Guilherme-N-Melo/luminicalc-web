@@ -1,6 +1,5 @@
 const display = document.querySelector('.result');
 const calcbuttons = document.querySelector('.buttons');
-display.value = '0';
 
 calcbuttons.addEventListener('click', (e) => {
   const btn = e.target.closest('button');
@@ -92,4 +91,3 @@ function calculate(first, second, operator) {
       return second;
   }
 }
-
