@@ -1,0 +1,136 @@
+body {
+    background-color: rgb(18, 17, 17);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.bodyofcalculator {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 360px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.display {
+    width: 100%;
+}
+
+.display > input {
+    width: 100%; 
+    box-sizing: border-box;
+    font-size: clamp(1.0rem, 3vw,2.0rem);
+    font-family: Monaco, monospace;
+    text-align: right;
+    color: #ffffff;
+    background-color: #111111;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: clamp(10px, 3vw, 20px);
+    outline: none; 
+    
+}
+
+.buttons {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.buttons button {
+    border: 1px solid #333333;
+    border-radius: 8px;
+    background-color: #444444;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button:hover {
+    background-color: #7d7c7c;
+}
+
+.buttons button:active {
+    background-color: #363535;
+}
+
+.buttons .gitbtn img {
+    width: 40px;
+    
+}
+.buttons .clearbtn {
+    order: 1;
+    grid-column: span 2;
+    background-color: #656565;
+    color: #ffffff;
+}
+
+.buttons .gitbtn {
+    order: 2;
+}
+
+.buttons .deletebtn {
+    order: 3;
+    background-color: #757575;
+    color: #ffffff;
+}
+
+.buttons button:nth-child(16) { order: 4; }
+.buttons button:nth-child(17) { order: 5; }
+.buttons button:nth-child(18) { order: 6; }
+.buttons button:nth-child(6) { order: 7; }
+
+.buttons button:nth-child(13) { order: 8; }
+.buttons button:nth-child(14) { order: 9; }
+.buttons button:nth-child(15) { order: 10; }
+.buttons button:nth-child(5) { order: 11; }
+
+.buttons button:nth-child(10) { order: 12; }
+.buttons button:nth-child(11) { order: 13; }
+.buttons button:nth-child(12) { order: 14; }
+.buttons button:nth-child(4) { order: 15; }
+
+.buttons button:nth-child(19) {
+    order: 16;
+    grid-column: span 2;
+}
+
+.buttons .decimalbtn {
+    order: 17;
+}
+
+.buttons button:nth-child(3) { order: 18; }
+
+.buttons .operatobtn {
+    background-color: #757575;
+}
+
+
+.buttons .equalsbtn {
+    order: 19;
+    grid-column: span 4;
+    background-color: #757575;
+    color: #ffffff;
+    
+}
