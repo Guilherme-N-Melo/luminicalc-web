@@ -30,7 +30,15 @@ function buttonClick(btn) {
     case '-':
     case 'x':
     case '/':
-      calcStorage.accumulator = parseFloat(display.value);
+     let valorAtual = parseFloat(display.value);
+    if (calcStorage.operator) {
+      if (calcStorage.operator === '+') calcStorage.accumulator += valorAtual;
+      else if (calcStorage.operator === '-') calcStorage.accumulator -= valorAtual;
+      else if (calcStorage.operator === 'x') calcStorage.accumulator *= valorAtual;
+      else if (calcStorage.operator === '/') calcStorage.accumulator /= valorAtual;
+    } else {
+      calcStorage.accumulator = valorAtual;
+    }
       calcStorage.operator = val;
       display.value = '0';
       break;
@@ -79,7 +87,7 @@ function calculate(first, second, operator) {
     case 'x':
       return first * second;
     case '/':
-      return second !== 0 ? first / second : 'A Sílvia vai te dar uma porrada';
+      return second !== 0 ? first / second : 'Really?';
     default:
       return second;
   }
