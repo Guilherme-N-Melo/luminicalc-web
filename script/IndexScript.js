@@ -7,6 +7,20 @@ calcbuttons.addEventListener('click', (e) => {
   buttonClick(btn);
 });
 
+window.addEventListener('keydown', (e) => {
+    let keyboard =e.key;
+    if (keyboard === 'Enter') {keyboard = '=';
+    }else if (keyboard === 'Backspace'){ keyboard = 'Del';
+    }else if (keyboard === '*') keyboard = 'x';
+    const btn = Array.from(calcbuttons.querySelectorAll('button')).find(
+      (button) => button.textContent.trim() === keyboard
+    );
+
+    if (!btn) return;
+    buttonClick(btn);
+  }
+);
+
 const calcStorage = {
   accumulator: null,
   operator: null,
@@ -91,3 +105,4 @@ function calculate(first, second, operator) {
       return second;
   }
 }
+
