@@ -1,11 +1,15 @@
 # luminicalc-web
-> **Status** In Development (v0.1.0)
+> **Status** In Development (v0.3.0)
 
 ## About
 This project aims to teach the core foundations of web development using HTML5, CSS, and JavaScript.
 
 ## Features
-- [ ] Basic and minimalist calculator
-- [ ] Custom calculator
+- [x] Basic and minimalist calculator
+- [x] Keyboard numbers
+- [ ] Logo
+- [ ] Black and White theme
+- [ ] More operator buttons(Root, Percentage, Parentheses and Exponent)
+- [ ] Mobile optimization
 - [ ] More features coming soon...
 
