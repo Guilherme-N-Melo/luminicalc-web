@@ -7,7 +7,7 @@ This project aims to teach the core foundations of web development using HTML5, 
 ## Features
 - [x] Basic and minimalist calculator
 - [x] Keyboard numbers
-- [ ] Logo
+- [x] Logo
 - [ ] Black and White theme
 - [ ] More operator buttons(Root, Percentage, Parentheses and Exponent)
 - [ ] Mobile optimization
