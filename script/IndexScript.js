@@ -1,5 +1,6 @@
 const display = document.querySelector('.result');
 const calcbuttons = document.querySelector('.buttons');
+const darktheme=document.querySelector('.theme')
 
 calcbuttons.addEventListener('click', (e) => {
   const btn = e.target.closest('button');
@@ -106,3 +107,21 @@ function calculate(first, second, operator) {
   }
 }
 
+const savedTheme = localStorage.getItem('darkmode');
+if (savedTheme === 'true') {
+  document.body.classList.add('darkmode');
+  darktheme.checked = true;
+}else{
+  document.body.classList.remove('darkmode');
+  darktheme.checked = false;
+}
+
+darktheme.addEventListener('change', () => {
+  if (darktheme.checked) {
+    document.body.classList.add('darkmode');
+    localStorage.setItem('darkmode', 'true');
+  } else {
+    document.body.classList.remove('darkmode');
+    localStorage.setItem('darkmode', 'false');
+  }
+})
