@@ -9,7 +9,6 @@ This project aims to teach the core foundations of web development using HTML5, 
 - [x] Keyboard numbers
 - [x] Logo
 - [x] Light and dark themes added with local storage saving
-- [ ] More operator buttons(Root, Percentage, Parentheses and Exponent)
-- [ ] Mobile optimization
+- [x] More operator buttons(Root, Percentage, Parentheses and Exponent)
 - [ ] More features coming soon...
 
