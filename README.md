@@ -1,5 +1,5 @@
 # luminicalc-web
-> **Status** In Development (v0.3.0)
+> **Status** In Development (v0.3.1)
 
 ## About
 This project aims to teach the core foundations of web development using HTML5, CSS, and JavaScript.
