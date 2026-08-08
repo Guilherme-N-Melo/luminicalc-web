@@ -15,7 +15,7 @@ window.addEventListener('keydown', (e) => {
   if (keyboard === 'Backspace') keyboard = 'Del';
   if (keyboard === '*') keyboard = 'x';
   if (keyboard === 'r') keyboard = '√';
-  if (keyboard === 'p') keyboard = '%';
+  if (keyboard === 'p') keyboard = '%x';
   if (keyboard === 'Escape') keyboard = 'C';
 
   const btn = Array.from(calcbuttons.querySelectorAll('button')).find(
@@ -27,7 +27,7 @@ window.addEventListener('keydown', (e) => {
     buttonClick(btn);
   }
 });
-
+const operators = ['+', '-', 'x', '/', '%', '^'];
 function buttonClick(btn) {
   if (!btn) return;
 
@@ -54,11 +54,16 @@ function buttonClick(btn) {
   if (val === '=') {
   try {
     let expression = display.value;
+    expression = expression.replace(/([0-9]|\))√/g, '$1*√')
     expression = expression.replaceAll('x', '*');
     expression = expression.replaceAll('^', '**');
     expression = expression.replaceAll('√', 'Math.sqrt');
     expression = expression.replaceAll('%', '/100*'); 
-
+    const openCount = (expression.split('(').length - 1);
+    const closeCount = (expression.split(')').length - 1);
+    for (let i = 0; i < (openCount - closeCount); i++) {
+        expression += ')';
+    }
     display.value = eval(expression);
   } catch (error) {
     display.value = 'Error';
@@ -91,8 +96,6 @@ function buttonClick(btn) {
     return;
   }
 
-  const operators = ['+', '-', 'x', '/', '%', '^'];
-
   if (display.value === '0') {
   if (val === '-') {
     display.value = '-';
@@ -102,7 +105,9 @@ function buttonClick(btn) {
     display.value = val;
   }
     } else {
-      display.value += val;
+      if (operators.includes(val) && operators.includes(display.value.slice(-1))) {
+        display.value = display.value.slice(0, -1) + val;
+      }else{display.value += val;}
     }
 }
 
