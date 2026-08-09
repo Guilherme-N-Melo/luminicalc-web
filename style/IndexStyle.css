@@ -1,15 +1,12 @@
-body {
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+html, body {
+    margin: -1px;
+    padding: -1px;
+    width: 340px; 
+    background-color: #ffffff ;
+    overflow: hidden;
 }
 
 #main {
-    display: flex;
-    min-height: 100vh;
     width: 100%;
 }
 
@@ -23,19 +20,13 @@ body {
 }
 
 .bodyofcalculator {
-    background-color: #ffffff;
-    padding: 24px;
-    position: relative !important;
-    border-radius: 28px;
-    width: 90%;
-    max-width: 420px;
-    height: auto;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+    background-color: #ffffff ;
+    padding: 20px;
+    border-radius: 0; 
+    border: none;
+    box-shadow: none;
+    width: 100%;
     box-sizing: border-box;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eeeeee;
 }
 
 .display {
@@ -115,8 +106,8 @@ body {
     position: relative;
     display: inline-block;
     width: 50px;
-    height: 16px;
-    top: -29px;
+    height: 18px;
+    top: -30px;
     left: 5px;
     padding: 2px;
 }

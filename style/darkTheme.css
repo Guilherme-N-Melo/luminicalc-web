@@ -1,11 +1,10 @@
-body.darkmode {
+html.body.darkmode {
     background-color: rgb(10, 10, 10);
 }
 
 body.darkmode .bodyofcalculator {
-    background-color: #1c1c1c;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-    border: 1px solid #2a2a2a;
+     background-color: rgb(10, 10, 10);
+  
 }
 
 body.darkmode .display > input {
