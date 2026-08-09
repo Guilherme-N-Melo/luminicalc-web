@@ -56,15 +56,15 @@ function buttonClick(btn) {
     let expression = display.value;
     expression = expression.replace(/([0-9]|\))√/g, '$1*√')
     expression = expression.replaceAll('x', '*');
-    expression = expression.replaceAll('^', '**');
-    expression = expression.replaceAll('√', 'Math.sqrt');
+    expression = expression.replaceAll('^');
+    expression = expression.replaceAll('√', 'sqrt');
     expression = expression.replaceAll('%', '/100*'); 
     const openCount = (expression.split('(').length - 1);
     const closeCount = (expression.split(')').length - 1);
     for (let i = 0; i < (openCount - closeCount); i++) {
         expression += ')';
     }
-    display.value = eval(expression);
+    display.value = math.evaluate(expression);
   } catch (error) {
     display.value = 'Error';
   }
@@ -111,10 +111,16 @@ function buttonClick(btn) {
     }
 }
 
+const blackLogo = document.querySelector('.luminicalc-logo');
+const whiteLogo = document.querySelector('.luminicalc-logo');
+
 const savedTheme = localStorage.getItem('darkmode');
+
 if (savedTheme === 'true') {
   document.body.classList.add('darkmode');
   if (darktheme) darktheme.checked = true;
+  localStorage.setItem('darkmode', 'true');
+  blackLogo.src = 'img/white-luminicalc-logo.png';
 } else {
   document.body.classList.remove('darkmode');
   if (darktheme) darktheme.checked = false;
@@ -124,11 +130,9 @@ if (darktheme) {
   darktheme.addEventListener('change', () => {
     if (darktheme.checked) {
       document.body.classList.add('darkmode');
-      const blackLogo = document.querySelector('.luminicalc-logo');
       blackLogo.src = 'img/white-luminicalc-logo.png';
       localStorage.setItem('darkmode', 'true');
     } else {
-      const whiteLogo = document.querySelector('.luminicalc-logo');
       whiteLogo.src = 'img/black-luminicalc-logo.png';
       document.body.classList.remove('darkmode');
       localStorage.setItem('darkmode', 'false');
