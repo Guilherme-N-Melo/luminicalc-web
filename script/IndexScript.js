@@ -27,7 +27,7 @@ window.addEventListener('keydown', (e) => {
     buttonClick(btn);
   }
 });
-const operators = ['+', '-', 'x', '/', '%', '^'];
+const operators = ['+', '-', 'x', '/', '%'];
 function buttonClick(btn) {
   if (!btn) return;
 
